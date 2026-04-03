@@ -3,30 +3,11 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-nati
 import Avatar from '../components/Avatar';
 import PostCard from '../components/PostCard';
 import { Ionicons } from '@expo/vector-icons';
-
-const dummyMyPosts = [
-  {
-    id: '1',
-    username: 'Makhala',
-    userAvatar: 'https://drinkstore.shop/media/image/product/9605/lg/international-keiler-20x05l-weissbier-hell-mehrweg-mit-buegelverschluss.jpg',
-    time: '2h',
-    content: 'Embracing every moment that God gave me ✨',
-    image: 'https://africanlanders.com/wp-content/uploads/2023/05/1676141200882.jpg',
-    likes: 142,
-    reactions: ['👍', '❤️', '🔥']
-  },
-  {
-    id: '2',
-    username: 'Makhala',
-    userAvatar: 'https://drinkstore.shop/media/image/product/9605/lg/international-keiler-20x05l-weissbier-hell-mehrweg-mit-buegelverschluss.jpg',
-    time: 'Now',
-    content: 'This semester is showing me flames and i am tired but i will never stop until i succeed no matter what may come my way! 💪',
-    likes: 87,
-    reactions: ['❤️', '😍']
-  },
-];
+import { usePosts } from '../context/PostContext';
 
 const ProfileScreen = () => {
+  const { posts } = usePosts();
+
   return (
     <ScrollView style={styles.container}>
       {/* Cover Photo */}
@@ -45,7 +26,7 @@ const ProfileScreen = () => {
         <Text style={styles.name}>Makhala</Text>
         <Text style={styles.bio}>Software Engineering Student @ Limkokwing</Text>
 
-        {/* Updated Stats with Followers */}
+        {/* Stats with Followers */}
         <View style={styles.stats}>
           <View style={styles.stat}>
             <Text style={styles.statNumber}>24</Text>
@@ -69,7 +50,7 @@ const ProfileScreen = () => {
 
       {/* Your Posts Section */}
       <Text style={styles.sectionTitle}>Your Posts</Text>
-      {dummyMyPosts.map(post => (
+      {posts.map(post => (
         <PostCard key={post.id} post={post} />
       ))}
     </ScrollView>
@@ -85,11 +66,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     padding: 15,
   },
-  coverText: { 
-    color: '#fff', 
-    fontSize: 18, 
-    fontWeight: 'bold' 
-  },
+  coverText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
 
   profileInfo: {
     alignItems: 'center',
@@ -99,17 +76,9 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     paddingBottom: 15,
   },
-  name: { 
-    fontSize: 26, 
-    fontWeight: 'bold', 
-    marginTop: 10 
-  },
-  bio: { 
-    fontSize: 16, 
-    color: '#65676B' 
-  },
+  name: { fontSize: 26, fontWeight: 'bold', marginTop: 10 },
+  bio: { fontSize: 16, color: '#65676B' },
 
-  /* Stats with Followers */
   stats: { 
     flexDirection: 'row', 
     marginVertical: 18,
@@ -117,19 +86,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingHorizontal: 20,
   },
-  stat: { 
-    alignItems: 'center' 
-  },
-  statNumber: { 
-    fontSize: 22, 
-    fontWeight: 'bold', 
-    color: '#1877F2' 
-  },
-  statLabel: { 
-    fontSize: 14, 
-    color: 'gray',
-    marginTop: 2 
-  },
+  stat: { alignItems: 'center' },
+  statNumber: { fontSize: 22, fontWeight: 'bold', color: '#1877F2' },
+  statLabel: { fontSize: 14, color: 'gray', marginTop: 2 },
 
   editButton: {
     flexDirection: 'row',
@@ -140,11 +99,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginTop: 10,
   },
-  editText: { 
-    marginLeft: 8, 
-    color: '#1877F2', 
-    fontWeight: '600' 
-  },
+  editText: { marginLeft: 8, color: '#1877F2', fontWeight: '600' },
 
   sectionTitle: {
     fontSize: 18,
