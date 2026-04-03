@@ -22,8 +22,43 @@ const dummyStories = [
   { id: '5', name: 'Khotso', image: { uri: 'https://picsum.photos/id/133/200/200' } },
 ];
 
+// Other people's posts (static but realistic)
+const dummyOtherPosts = [
+  {
+    id: '101',
+    username: 'Limkokwing University',
+    userAvatar: 'https://picsum.photos/id/201/200/200',
+    time: '5h',
+    content: 'Proud of all our Software Engineering students! 💙 #BIMP2210 Keep pushing!',
+    likes: 324,
+    reactions: ['👍', '🎉', '❤️']
+  },
+  {
+    id: '102',
+    username: 'Thabo Mokoena',
+    userAvatar: 'https://picsum.photos/id/133/200/200',
+    time: 'Yesterday',
+    content: 'Anyone else struggling with navigation in React Native? 😅 I need help!',
+    image: 'https://picsum.photos/id/180/600/400',
+    likes: 19,
+    reactions: ['👍']
+  },
+  {
+    id: '103',
+    username: 'Lerato Phiri',
+    userAvatar: 'https://picsum.photos/id/29/200/200',
+    time: '14h',
+    content: 'Just finished my UI/UX assignment! Who else is done? 🔥',
+    likes: 56,
+    reactions: ['❤️', '🔥']
+  },
+];
+
 const HomeScreen = () => {
   const { posts } = usePosts();
+
+  // Combine your posts (at the top) + other people's posts
+  const allPosts = [...posts, ...dummyOtherPosts];
 
   return (
     <View style={styles.container}>
@@ -38,7 +73,7 @@ const HomeScreen = () => {
       </View>
 
       <FlatList
-        data={posts}
+        data={allPosts}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <PostCard post={item} />}
         showsVerticalScrollIndicator={false}

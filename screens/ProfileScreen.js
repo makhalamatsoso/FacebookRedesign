@@ -24,7 +24,7 @@ const ProfileScreen = () => {
           size={110} 
         />
         <Text style={styles.name}>Makhala</Text>
-        <Text style={styles.bio}>Software Engineering Student @ Limkokwing</Text>
+        <Text style={styles.bio}>Trust God in everything then you will see miracles happening.</Text>
 
         {/* Stats with Followers */}
         <View style={styles.stats}>
