@@ -33,7 +33,7 @@ const NotificationScreen = () => {
   return (
     <View style={styles.container}>
       
-      {/* Notifications Heading - Exactly like real Facebook */}
+      {/*Notifications Heading*/}
       <View style={styles.header}>
         <Text style={styles.title}>Notifications</Text>
       </View>
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F0F2F5' 
   },
 
-  /* Header */
+  /*Header*/
   header: {
     backgroundColor: '#fff',
     paddingHorizontal: 15,

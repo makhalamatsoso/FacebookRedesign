@@ -7,7 +7,7 @@ const PostCard = ({ post }) => {
   return (
     <View style={styles.card}>
       
-      {/* Post Header */}
+      {/*Post Header*/}
       <View style={styles.header}>
         <Avatar source={{ uri: post.userAvatar }} size={45} />
         <View style={styles.userInfo}>
@@ -19,10 +19,10 @@ const PostCard = ({ post }) => {
         </TouchableOpacity>
       </View>
 
-      {/* Post Content Text */}
+      {/*Post Content Text*/}
       <Text style={styles.contentText}>{post.content}</Text>
 
-      {/* Post Image */}
+      {/*Post Image*/}
       {post.image && (
         <Image 
           source={typeof post.image === 'string' ? { uri: post.image } : post.image} 
@@ -31,7 +31,7 @@ const PostCard = ({ post }) => {
         />
       )}
 
-      {/* Dynamic Like Count + Reactions */}
+      {/*Dynamic Like Count + Reactions */}
       <View style={styles.likeCountRow}>
         <View style={styles.reactionIcons}>
           {post.reactions && post.reactions.map((emoji, index) => (

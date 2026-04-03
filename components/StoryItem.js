@@ -5,13 +5,13 @@ import Avatar from './Avatar';
 const StoryItem = ({ name, image, isAddStory }) => {
   return (
     <TouchableOpacity style={styles.container}>
-      {/* Story Ring (looks like real Facebook gradient ring) */}
+      {/*Story Ring (looks like real Facebook gradient ring) */}
       <View style={[styles.storyRing, isAddStory && styles.addStoryRing]}>
         
-        {/* The actual avatar */}
+        {/*The actual avatar */}
         <Avatar source={image} size={isAddStory ? 68 : 72} />
 
-        {/* Blue "Add Story" button only for the first story */}
+        {/*Blue "Add Story" button only for the first story */}
         {isAddStory && (
           <View style={styles.addButton}>
             <Text style={styles.addText}>+</Text>
@@ -19,7 +19,7 @@ const StoryItem = ({ name, image, isAddStory }) => {
         )}
       </View>
 
-      {/* Story name */}
+      {/*Story name */}
       <Text style={styles.name} numberOfLines={1}>
         {name}
       </Text>
@@ -33,26 +33,26 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
 
-  /* Story Ring - Gives the beautiful Facebook look */
+  /* Story Ring*/
   storyRing: {
     width: 82,
     height: 82,
     borderRadius: 999,
     borderWidth: 3,
-    borderColor: '#1877F2',           // Facebook blue ring
+    borderColor: '#1877F2',          
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
     padding: 3,
   },
 
-  /* Slightly different ring for "Add Story" */
+  /*Slightly different ring for "Add Story" */
   addStoryRing: {
     borderColor: '#1877F2',
-    borderStyle: 'dashed',            // makes it look special
+    borderStyle: 'dashed',            
   },
 
-  /* Add Story Button */
+  /*Add Story Button */
   addButton: {
     position: 'absolute',
     bottom: 4,
