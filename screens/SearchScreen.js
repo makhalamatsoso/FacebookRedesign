@@ -18,7 +18,7 @@ const SearchScreen = () => {
 
   return (
     <View style={styles.container}>
-      {/*Facebook-style Search Bar*/}
+      {/*Search Bar*/}
       <View style={styles.searchHeader}>
         <View style={styles.searchBar}>
           <Ionicons name="search" size={22} color="#65676B" />

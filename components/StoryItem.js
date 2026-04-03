@@ -5,13 +5,13 @@ import Avatar from './Avatar';
 const StoryItem = ({ name, image, isAddStory }) => {
   return (
     <TouchableOpacity style={styles.container}>
-      {/*Story Ring (looks like real Facebook gradient ring) */}
+      {/*Story Ring */}
       <View style={[styles.storyRing, isAddStory && styles.addStoryRing]}>
         
         {/*The actual avatar */}
         <Avatar source={image} size={isAddStory ? 68 : 72} />
 
-        {/*Blue "Add Story" button only for the first story */}
+        {/*Add Story*/}
         {isAddStory && (
           <View style={styles.addButton}>
             <Text style={styles.addText}>+</Text>
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     padding: 3,
   },
 
-  /*Slightly different ring for "Add Story" */
+  /*different ring for "Add Story" */
   addStoryRing: {
     borderColor: '#1877F2',
     borderStyle: 'dashed',            

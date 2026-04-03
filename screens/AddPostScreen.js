@@ -24,7 +24,7 @@ const AddPostScreen = () => {
       reactions: ['👍']
     };
 
-    addPost(newPost);                    // ← This adds it to Home Feed instantly
+    addPost(newPost);          
     Alert.alert('Posted!', 'Your post has been shared on Facebook 🎉');
     setPostText('');
   };

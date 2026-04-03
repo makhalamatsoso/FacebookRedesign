@@ -57,10 +57,10 @@ const PostCard = ({ post }) => {
         </TouchableOpacity>
       </View>
 
-      {/* Post Content */}
+      {/*Post Content*/}
       <Text style={styles.contentText}>{post.content}</Text>
 
-      {/* Post Image */}
+      {/*Post Image*/}
       {post.image && (
         <Image 
           source={typeof post.image === 'string' ? { uri: post.image } : post.image} 
@@ -79,7 +79,7 @@ const PostCard = ({ post }) => {
         <Text style={styles.likeCount}>{likeCount} likes</Text>
       </View>
 
-      {/* Action Buttons - NOW INTERACTIVE */}
+      {/*Action Buttons*/}
       <View style={styles.actionBar}>
         <TouchableOpacity style={styles.actionButton} onPress={handleLike}>
           <Ionicons 

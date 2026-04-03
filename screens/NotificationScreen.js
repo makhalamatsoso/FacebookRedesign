@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     color: '#050505',
   },
 
-  /* Notification Card */
+  /*Notification Card */
   notifCard: {
     flexDirection: 'row',
     alignItems: 'center',

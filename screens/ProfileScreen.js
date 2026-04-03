@@ -48,7 +48,7 @@ const ProfileScreen = () => {
         </TouchableOpacity>
       </View>
 
-      {/* Your Posts Section */}
+      {/*Posts Section */}
       <Text style={styles.sectionTitle}>Your Posts</Text>
       {posts.map(post => (
         <PostCard key={post.id} post={post} />

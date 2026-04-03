@@ -22,7 +22,7 @@ const dummyStories = [
   { id: '5', name: 'Khotso', image: { uri: 'https://picsum.photos/id/133/200/200' } },
 ];
 
-// Other people's posts (static but realistic)
+// Other people's posts
 const dummyOtherPosts = [
   {
     id: '101',
@@ -57,13 +57,12 @@ const dummyOtherPosts = [
 const HomeScreen = () => {
   const { posts } = usePosts();
 
-  // Combine your posts (at the top) + other people's posts
   const allPosts = [...posts, ...dummyOtherPosts];
 
   return (
     <View style={styles.container}>
       
-      {/* Top Bar */}
+      {/*Top Bar */}
       <View style={styles.topBar}>
         <Text style={styles.facebookLogo}>facebook</Text>
         <View style={styles.topIcons}>
@@ -109,7 +108,7 @@ const HomeScreen = () => {
               </View>
             </View>
 
-            {/* Stories Section */}
+            {/*Stories Section */}
             <ScrollView 
               horizontal 
               showsHorizontalScrollIndicator={false}
